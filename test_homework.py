@@ -5,6 +5,7 @@ def test_dark_theme():
     """
     Протестируйте правильность переключения темной темы на сайте
     """
+
     current_time = time(hour=23)
     if time(hour=22) <= current_time or current_time <= time(hour=6):
         dark_theme = True
@@ -12,7 +13,7 @@ def test_dark_theme():
         dark_theme = False
     assert dark_theme is True
 
-    # TODO переключите темную тему в зависимости от времени суток (с 22 до 6 часов утра - ночь)
+ # TODO переключите темную тему в зависимости от времени суток (с 22 до 6 часов утра - ночь)
 
 # is_dark_theme = None
 # assert is_dark_theme is True
@@ -24,6 +25,7 @@ current_time = time(hour=23)
 is_dark_theme_enabled = True
 
 
+
 # TODO переключите темную тему в зависимости от времени суток,
 #  но учтите что темная тема может быть включена вручную
 is_dark_theme = None
@@ -33,11 +35,8 @@ else:
     is_dark_theme = False
 assert is_dark_theme is True
 
-
 def test_find_suitable_user():
     """
-
-
     Найдите нужного пользователя по условиям в списке пользователей
     """
     users = [
@@ -49,13 +48,13 @@ def test_find_suitable_user():
     ]
     # TODO найдите пользователя с именем "Olga"
 
-    suiable_user = [user for user in users if user["name"] == "Olga"]
+    suiable_user = [user for user in users if user ["name"] =="Olga"]
     suiable_user = suiable_user[0]
 
     assert suiable_user == {"name": "Olga", "age": 45}
 
     # TODO найдите всех пользователей младше 20 лет
-    suiable_users = [user for user in users if user["age"] < 20]
+    suiable_users = [user for user in users if user ["age"] < 20]
     assert suiable_users == [
         {"name": "Stanislav", "age": 15},
         {"name": "Maria", "age": 18},
@@ -71,18 +70,9 @@ def test_find_suitable_user():
 # >>> open_browser(browser_name="Chrome")
 # "Open Browser [Chrome]"
 
-
-#def rename_function(func_name, *args):
-#   return f'{func_name.__name__.replace("_", " ").title()} [{", ".join(args)}]'
-
-def rename_function(func, *args):
-    a = func.__name__.replace('_', ' ').title() + " ["
-    for arg in args:
-        a += arg + ', '
-    a = a[:-2]
-    a += ']'
-    print('\n' + a)
-    return a
+def rename_function(func_name, *args):
+    return f'{func_name.__name__.replace("_", " ").title()} [{", ".join(args)}]'
+    print(rename_function())
 
 def test_readable_function():
     open_browser(browser_name="Chrome")
