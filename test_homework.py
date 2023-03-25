@@ -71,24 +71,22 @@ def test_find_suitable_user():
 # >>> open_browser(browser_name="Chrome")
 # "Open Browser [Chrome]"
 
-<<<<<<<<< Temporary merge branch 1
-
 def rename_function(func_name, *args):
-    return f'{func_name.__name__.replace("_", " ").title()} [{", ".join(args)}]'
-=========
->>>>>>>>> Temporary merge branch 2
+    txt_transform = f'{func_name.__name__.replace("_", " ").title()} [{", ".join(args)}]'
+    print(f'\n{txt_transform}')
+    return txt_transform
 
 #def rename_function(func_name, *args):
 #   return f'{func_name.__name__.replace("_", " ").title()} [{", ".join(args)}]'
 
-def rename_function(func, *args):
-    a = func.__name__.replace('_', ' ').title() + " ["
-    for arg in args:
-        a += arg + ', '
-    a = a[:-2]
-    a += ']'
-    print('\n' + a)
-    return a
+# def rename_function(func, *args):
+#     a = func.__name__.replace('_', ' ').title() + " ["
+#     for arg in args:
+#         a += arg + ', '
+#     a = a[:-2]
+#     a += ']'
+#     print('\n' + a)
+#     return a
 
 def test_readable_function():
     open_browser(browser_name="Chrome")
